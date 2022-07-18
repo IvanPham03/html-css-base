@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">Music</a></li>
+            <li class="nav-item"><a href="#">Artists</a></li>
+            <li class="nav-item"><a href="#">About</a></li>
+            <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+        <div class="option">
+            <p class="option-text"></p>
+            <div class="option-btn">
+                <div class="disk">
+                    <img src="./src/asset/disk.png" alt="" id="disk-img">
+                </div>
+                <div class="info">
+                    <p class="song">
+                        Hạ Còn Vương Nắng
+                    </p>
+                    <p class="author">
+                        DATKAA x KIDO
+                    </p>
+                </div>
+
+                <span class="progress">
+                    <span class="progress-currentTime">00:00</span>
+                    <div class="progress-bar">
+                        <div class="progress-run"></div>
+                    </div>
+                    <span class="progress-durationTime">
+                        03:00
+                    </span>
+            </div>
+            <div class="option-bar">
+                <button class="back">
+                    <i class="fa fa-step-backward"></i>
+                </button>
+                <button class="play">
+                    <i class="fa fa-play-circle-o"></i>
+                </button>
+                <button class="next">
+                    <i class="fa fa-step-forward"></i>
+                </button>
+
+
+                <!-- <i class="fa fa-align-justify btn" id="list"></i> -->
+            </div>
+
+
+        </div>
+    </div>
+    <div class="image">
+
+    </div>
+    </div>
+
+    <div class="list-song"></div>
+    <div class="las">
+        <audio id="audio"></audio>
+
+    </div>
+</body>
+<script src="./src/script.js">
+</script>
+
+</html>
