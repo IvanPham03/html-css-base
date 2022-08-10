@@ -72,3 +72,81 @@ const menu = [
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
+
+// get parent element
+
+const sectionCenter = document.querySelector(".section-center");
+
+const btnContainer = document.querySelector(".btn-container");
+
+// display all items when page loads
+
+// when page loaded display all items
+window.addEventListener("DOMContentLoaded", () => {
+  displayBtnMenu();
+  displayMenuItems(menu);
+});
+
+function displayMenuItems(menu) {
+  let displayMenu = menu.map(function (item) {
+    return `<article class="menu-item">
+      <img src=${item.img} alt= ${item.title} class="photo" />
+      <div class="item-info">
+        <header>
+          <h4>${item.title}</h4>  
+          <h4 class="price">$${item.price}</h4>
+        </header>
+        <p class="item-text">
+          ${item.desc}
+        </p>
+      </div>
+    </article>`;
+  });
+  displayMenu = displayMenu.join("");
+  // console.log(displayMenu);
+
+  sectionCenter.innerHTML = displayMenu;
+}
+
+function displayBtnMenu() {
+  //  lay gia cac loai: all, breakfast, lunch, shakes
+  const categories = menu.reduce(
+    (valueReturn, currentItem) => {
+      if (!valueReturn.includes(currentItem.category)) {
+        valueReturn.push(currentItem.category);
+      }
+      return valueReturn;
+    },
+    ["all"]
+  );
+  // console.log(categories);
+
+  const categoryBtns = categories
+    .map(function (category) {
+      return `<button type='button' class='filter-btn' data-id=${category}>${category}
+      </button>`;
+    })
+    .join("");
+  btnContainer.innerHTML = categoryBtns;
+
+  const filterBtns = btnContainer.querySelectorAll(".filter-btn");
+  // console.log(filterBtns);
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", (e) => {
+      const category = e.currentTarget.dataset.id;
+
+      console.log(category);
+      const menuCategory = menu.filter((items) => {
+        if (items.category === category) {
+          return items;
+        }
+      });
+      if (category === "all") {
+        displayMenuItems(menu);
+      } else {
+        displayMenuItems(menuCategory);
+      }
+    });
+  });
+}
