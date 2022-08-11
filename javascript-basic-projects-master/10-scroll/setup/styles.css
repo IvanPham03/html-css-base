@@ -216,6 +216,10 @@ nav {
 /* .fixed-nav .links-container {
   height: auto !important;
 } */
+
+.nav-center {
+  transition: 0.5 ease-in-out;
+}
 .nav-header {
   display: flex;
   align-items: center;
