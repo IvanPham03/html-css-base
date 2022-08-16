@@ -3,7 +3,10 @@ const nextBtn = document.querySelector(".nextBtn");
 const prevBtn = document.querySelector(".prevBtn");
 slides.forEach(function (slide, index) {
   slide.style.left = `${index * 100}%`;
+  // console.log(index * 100);
 });
+
+// slide
 let counter = 0;
 nextBtn.addEventListener("click", function () {
   counter++;
@@ -26,6 +29,7 @@ function carousel() {
   // working with buttons
 
   if (counter < slides.length - 1) {
+    console.log(counter);
     nextBtn.style.display = "block";
   } else {
     nextBtn.style.display = "none";
