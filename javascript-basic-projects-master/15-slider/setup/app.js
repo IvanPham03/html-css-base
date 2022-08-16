@@ -32,9 +32,14 @@ function carousel() {
     prevBtn.style.display = "none";
   }
 
+
   //   console.log(counter);
+  console.log(counter);
   slides.forEach((slide) => {
     slide.style.transform = `translateX(-${counter * 100}%)`;
+    if(counter === 0) {
+      console.log(slide.style.left);
+    }
   });
 }
 prevBtn.style.display = "none";
@@ -42,8 +47,8 @@ function auto() {
   setInterval(() => {
     counter++;
     carousel();
-    if (counter === slides.length - 1) {
-      counter = 0;
+    if (counter === slides.length-1) {
+      counter = -1;
     }
   }, 1000);
 }
